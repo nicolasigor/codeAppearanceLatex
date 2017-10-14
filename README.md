@@ -1,6 +1,6 @@
 # codeAppearanceLatex
 
-These are config files for LaTeX documents, to insert pretty code. Two options are available, both of them supporting Julia code. To use them, place it in your directory and add in the preamble:
+These are config files to insert pretty code inside LaTeX documents. Two options are available, both of them supporting Julia language syntax highlighting. To use them, place one of the files in your directory and write in the preamble:
 ```
 \input{codeListingConfig.tex}
 ```
@@ -10,7 +10,7 @@ or:
 ```
 depending on which one you want to use.
 
-An example document is provided in main.tex, which uses both approaches to show the code "leastSquares.jl". The Listing package is less prone to installation errors, but at least in ShareLatex both of them work well. Note that the Minted package needs a floating environment to support captions and labels.
+An example document is provided in main.tex, which uses both approaches to show the code "leastSquares.jl", and whose output is shown in exmple.pdf. The Listing package is less prone to installation errors, but at least in ShareLatex both of them work well. Note that the Minted package needs a floating environment to support captions and labels.
 
 *************************************************************
 ## codeListingConfig.tex ---- Listing package approach
