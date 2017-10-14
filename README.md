@@ -1,4 +1,4 @@
-# codeAppareanceLatex
+# codeAppearanceLatex
 
 These are config files for LaTeX documents, to insert pretty code. Two options are available, both of them supporting Julia code. To use them, place it in your directory and add in the preamble:
 ```
