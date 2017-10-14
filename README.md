@@ -13,11 +13,11 @@ depending on which one you want to use.
 An example document is provided in main.tex, which uses both approaches to show the code "leastSquares.jl". The Listing package is less prone to installation errors, but at least in ShareLatex both of them work well. Note that the Minted package needs a floating environment to support captions and labels.
 
 *************************************************************
-##codeListingConfig.tex ---- Listing package approach
+## codeListingConfig.tex ---- Listing package approach
 *************************************************************
 
 This is a config file to set:
-   1. Style for listing package (could be use on any language)
+   1. Style for listing package (could be used on any language)
    2. Julia syntax highlighting definition
    3. Command and environment to insert julia, python, and matlab code in your document easily.
 
@@ -26,7 +26,7 @@ This is a config file to set:
            folder_name is optional, and do it with the slash, e.g. "myFolder/". When no folder is provided, it is assumed that the code is in the same directory as your document.
            For file_name, do it without extension (it is assumed).
        Example:
-            ```
+           ```
            \juliaFile[codes/]{kMeans}
            \juliaFile{randomForest}
            ```
@@ -40,7 +40,7 @@ This is a config file to set:
 
 
 *************************************************************
-##juliaMintedConfig.tex ---- Minted package approach
+## juliaMintedConfig.tex ---- Minted package approach
 *************************************************************
 
  This is a config file to set:
