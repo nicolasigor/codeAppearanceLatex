@@ -21,22 +21,26 @@ This is a config file to set:
    2. Julia syntax highlighting definition
    3. Command and environment to insert julia, python, and matlab code in your document easily.
 
-       a. new commands: \juliaFile, \pythonFile, and \matlabFile
-           All three are used like \juliaFile[folder_name]{file_name}
-           folder_name is optional, and do it with the slash, e.g. "myFolder/". When no folder is provided, it is assumed that the code is in the same directory as your document.
-           For file_name, do it without extension (it is assumed).
-       Example:
-           ```
-           \juliaFile[codes/]{kMeans}
-           \juliaFile{randomForest}
-           ```
+       a. New commands: \juliaFile, \pythonFile, and \matlabFile
+       
+        All three are used like
+        ```
+        \juliaFile[folder_name]{file_name}
+        ```
+        folder_name is optional, and do it with the slash, e.g. "myFolder/". When no folder is provided, it is assumed that the code is in the same directory as your document.
 
-       b. new environments: if you want to write your code directly in your document. juliaText, pythonText, and matlabText are provided. Example:
-            ```
-           \begin{juliaText}{Write your caption here.}
-               Write your code here
-           \end{juliaText}
-            ```
+        For file_name, do it without extension (it is assumed). Example:
+        ```
+        \juliaFile[codes/]{kMeans}
+        \juliaFile{randomForest}
+        ```
+
+       b. New environments: if you want to write your code directly in your document. juliaText, pythonText, and matlabText are provided. Example:
+        ```
+        \begin{juliaText}{Write your caption here.}
+            Write your code here
+        \end{juliaText}
+        ```
 
 
 *************************************************************
@@ -45,13 +49,13 @@ This is a config file to set:
 
  This is a config file to set:
    1. Style for minted package, using Julia language as a default.
-   2. A command to insert julia code. Note that to have caption, a floating environment is needed.
+   2. A command to insert julia code. Note that to have caption and label, a floating environment is needed.
    Example without caption: 
    ```
-       \juliaFileMinted{randomForest.jl}
-       ```
+   \juliaFileMinted{randomForest.jl}
+   ```
    Example with float environment:
-```
+   ```
    \begin{listing}[h!]   
       \caption{My Caption}      
       \label{code:myLabel}
