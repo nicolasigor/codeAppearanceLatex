@@ -42,8 +42,8 @@ juliaMintedConfig.tex ---- Minted package approach
        \juliaFileMinted{randomForest.jl}
    Example with float environment:
 
-   \begin{listing}[h!]
-      \caption{My Caption}
-      \label{code:myLabel}
-      \juliaFileMinted{randomForest.jl}
+   \begin{listing}[h!]\n
+      \caption{My Caption}\n
+      \label{code:myLabel}\n
+      \juliaFileMinted{randomForest.jl}\n
    \end{listing}
