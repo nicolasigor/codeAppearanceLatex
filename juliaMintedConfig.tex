@@ -1,0 +1,36 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% MINTED APPEARANCE CONFIG %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%% nicolas igor %%%%%%
+
+%%%%%%%%%%%%%%%%% README %%%%%%%%%%%%%%%%%%%%
+% This is a config file to set:
+%   1. Style for minted package, using Julia language as a default.
+%   2. A command to insert julia code. Note that to have caption, a floating environment is needed.
+%   Example without caption: 
+%       \juliaFileMinted{randomForest.jl}
+%   Example with float environment:
+%
+%   \begin{listing}[h!]
+%   \caption{My Caption}
+%   \label{code:myLabel}
+%   \juliaFileMinted{randomForest.jl}
+%   \end{listing}
+
+\usepackage[newfloat]{minted}
+
+\newmintedfile[juliaFileMinted]{julia}{
+frame=lines,
+framesep=2mm,
+fontsize=\small,
+breaklines=true,
+tabsize = 4,
+numbersep=5pt,
+linenos}

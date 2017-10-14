@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{fullpage}
+
+% Uncomment the config file you want
+\input{codeListingConfig.tex}
+\input{juliaMintedConfig.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% FUN STARTS HERE!!! %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\section{Experiment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+This is the experiment. The first is Listing, the second is Minted.
+
+% Listing Output
+\juliaFile{leastSquares}
+
+% Minted Output
+\begin{listing}[h!]
+\caption{Script \emph{leastSquares}}
+\label{code:myLabel}
+\juliaFileMinted{leastSquares.jl}
+\end{listing}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% WE ARE DONE !!! %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

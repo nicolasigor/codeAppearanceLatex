@@ -1,0 +1,111 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% CODE APPEARANCE CONFIG %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%nicolas igor %%%%%%
+
+%%%%%%%%%%%%%%%%% README %%%%%%%%%%%%%%%%%%%%
+% This is a config file to set:
+%   1. Style for listing package (could be use on any language)
+%   2. Julia syntax highlighting definition
+%   3. Command and environment to insert julia, python, and matlab code in your document easily.
+%
+%       a. new commands: \juliaFile, \pythonFile, and \matlabFile
+%           All three are used like \juliaFile[folder_name]{file_name}
+%           folder_name is optional, and do it with the slash, e.g. "myFolder/". When no folder is provided, it is assumed that the code is in the same directory as your document.
+%           For file_name, do it without extension (it is assumed).
+%       Example:
+%           \juliaFile[codes/]{kMeans}
+%           \juliaFile{randomForest}
+%
+%       b. new environments: if you want to write your code directly in your document. juliaText, pythonText, and matlabText are provided. Example:
+%           \begin{juliaText}{Write your caption here.}
+%           Write your code here
+%           \end{juliaText}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Better font encoding, and customized fixed-width font
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+
+% Colors Definition for Listing Highlighting 
+\usepackage{color}
+\definecolor{codeRed}{rgb}{0.5,0,0}
+\definecolor{codeGreen}{rgb}{0,0.6,0}
+\definecolor{codeBlue}{rgb}{0,0,0.5}
+\definecolor{codeGray}{rgb}{0.5,0.5,0.5}
+\definecolor{codeMauve}{rgb}{0.58,0,0.82}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% LISTING FUN STARTS HERE!!! %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings} % For displaying code
+
+% General Appearance Settings in an Isolated Style
+\lstdefinestyle{myStyle}{ %
+  basicstyle=\small\ttfamily,      % the size of the fonts that are used for the code
+  basewidth=0.5em,                 % sets size of reserved space on each column
+  breakatwhitespace=true,          % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  commentstyle=\color{codeGreen},  % comment style
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=tb,	                       % adds a frame around the code
+  keywordstyle=\color{codeBlue},       % keyword style
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\scriptsize\color{codeGray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  numberfirstline=true, 
+  numberblanklines=true,
+  stringstyle=\color{codeMauve},     % string literal style
+  tabsize=4,	                   % sets default tabsize to 4 spaces
+}
+
+% Definition of Julia Highlighting
+\lstdefinelanguage{Julia}%
+{ language = Matlab,% 
+    keywordsprefix=\@,%
+    morekeywords={
+    exit,whos,edit,load,is,isa,isequal,typeof,tuple,ntuple,uid,hash,finalizer,convert,promote,
+    subtype,typemin,typemax,realmin,realmax,sizeof,eps,promote_type,method_exists,applicable,
+    invoke,dlopen,dlsym,system,error,throw,assert,new,Inf,Nan,pi,im,begin,while,for,in,return,
+    break,continue,macro,quote,let,if,elseif,else,try,catch,end,bitstype,call,do,using,module,
+    import,export,importall,baremodule,immutable,local,global,const,Bool,Int,Int8,Int16,Int32,
+    Int64,Uint,Uint8,Uint16,Uint32,Uint64,Float32,Float64,Complex64,Complex128,Any,Nothing,nothing,
+    function,type,typealias,abstract,case,false,otherwise,switch,true,include
+  },%
+  sensitive=true, %
+  comment=[l]{\#}, % l is for line comment
+  morecomment=[s]{\#=}{=\#}, % s is for start and end delimiter
+  string=[b]" % defines that strings are enclosed in double quotes
+}
+
+% Command to include files of code easier, Julia
+\newcommand{\juliaFile}[2][]{\lstinputlisting[caption=Script \emph{#2}., label=code:#2, style=myStyle, language=Julia]{#1#2.jl}}
+% Command to include files of code easier, Python
+\newcommand{\pythonFile}[2][]{\lstinputlisting[caption=Script \emph{#2}., label=code:#2, style=myStyle, language=Python]{#1#2.py}}
+% Command to include files of code easier, Matlab
+\newcommand{\matlabFile}[2][]{\lstinputlisting[caption=Script \emph{#2}., label=code:#2, style=myStyle, language=Matlab]{#1#2.m}}
+
+% Environment to write by hand code easier, Julia
+\lstnewenvironment{juliaText}[1]{\lstset{caption=#1, style=myStyle, language=Julia, firstnumber=1}}{}
+% Environment to write by hand code easier, Python
+\lstnewenvironment{pythonText}[1]{\lstset{caption=#1, style=myStyle, language=Python, firstnumber=1}}{}
+% Environment to write by hand code easier, Matlab
+\lstnewenvironment{matlabText}[1]{\lstset{caption=#1, style=myStyle, language=Matlab, firstnumber=1}}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% LISTING FUN ENDED  %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
